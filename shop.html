@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda - Funcionalidades</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    /* Navbar personalizado */
+    .custom-navbar { background: #3b5d50 !important; padding: 20px 0; }
+    .custom-navbar .navbar-brand { font-size: 32px; font-weight: 600; }
+    .custom-navbar .navbar-brand > span { opacity: .4; }
+    .custom-navbar .navbar-toggler { border-color: transparent; }
+    .custom-navbar .navbar-toggler:focus, .custom-navbar .navbar-toggler:active { outline: none; box-shadow: none; }
+    @media (min-width: 992px) { .custom-navbar .custom-navbar-nav li { margin: 0 15px; } }
+    .custom-navbar .custom-navbar-nav li a { font-weight: 500; color: #fff !important; opacity: .8; transition: .3s; position: relative; }
+    .custom-navbar .custom-navbar-nav li a:hover { opacity: 1; }
+    .custom-navbar .custom-navbar-nav li.active a { opacity: 1; }
+    .custom-navbar .custom-navbar-cta li { margin-left: 0; margin-right: 0; }
+    .custom-navbar .custom-navbar-cta li:first-child { margin-right: 20px; }
+
+    /* Productos */
+    .product-card { border: 1px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-bottom: 30px; transition: 0.3s; }
+    .product-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .product-card img { max-width: 100%; border-radius: 10px; height: 150px; object-fit: cover; }
+    .product-card h5 { margin-top: 15px; font-weight: 600; }
+    .product-card p { margin-bottom: 10px; }
+    .btn-add { background: #3b5d50; color: white; border: none; border-radius: 5px; }
+    .btn-add:hover { background: #2e473f; }
+    .quantity-input { width: 70px; display: inline-block; margin-right: 10px; }
+
+    .footer-section { padding: 80px 0; background: #ffffff; }
+    .footer-section a { text-decoration: none; color: #2f2f2f; transition: .3s; }
+    .footer-section a:hover { color: rgba(47, 47, 47, 0.5); }
+    .footer-section .subscription-form h3 { font-size: 18px; font-weight: 500; color: #3b5d50; }
+    .footer-section .form-control { height: 50px; border-radius: 10px; }
+    .footer-section .btn { border-radius: 10px !important; }
+    .footer-section .sofa-img img { max-width: 380px; position: absolute; top: -200px; right: 0; z-index: 1; }
+    .footer-section .footer-logo { font-size: 32px; font-weight: 500; color: #3b5d50; text-decoration: none; }
+    .footer-section .custom-social li { display: inline-block; margin: 2px; }
+    .footer-section .custom-social li a { width: 40px; height: 40px; text-align: center; line-height: 40px; display: inline-block; background: #dce5e4; color: #3b5d50; border-radius: 50%; }
+    .footer-section .custom-social li a:hover { background: #3b5d50; color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="custom-navbar navbar navbar-expand-md navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Coding Tool<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsFurni">
+      <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+        <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="shop.html">Funcionalidades</a></li>
+        <li><a class="nav-link" href="about.html">¿Quiénes somos?</a></li>
+        <li><a class="nav-link" href="services.html">Soluciones</a></li>
+        <li><a class="nav-link" href="blog.html">Casos de éxito</a></li>
+        <li><a class="nav-link" href="contact.html">Contáctanos</a></li>
+      </ul>
+      <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+        <li><a class="nav-link" href="#"><img src="images/user.svg" alt="Usuario"></a></li>
+        <li>
+          <a class="nav-link" href="cart.html" style="position: relative;">
+            <img src="images/cart.svg" alt="Cotizador">
+            <span id="cart-count-badge" style="position:absolute;top:-5px;right:-5px;background:red;color:white;border-radius:50%;padding:2px 6px;font-size:12px;"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Productos -->
+<section class="container my-5">
+  <h1 class="mb-4">Funcionalidades</h1>
+  <div class="row" id="product-list"></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-section">
+  <div class="container relative">
+    <div class="sofa-img">
+      <img src="images/sofa.png" alt="Imagen decorativa" class="img-fluid">
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="subscription-form">
+          <h3>Suscríbete a nuestro boletín</h3>
+          <form action="#" class="row g-3">
+            <div class="col-auto">
+              <input type="text" class="form-control" placeholder="Tu nombre">
+            </div>
+            <div class="col-auto">
+              <input type="email" class="form-control" placeholder="Tu correo electrónico">
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row g-5 mb-5">
+      <div class="col-lg-4">
+        <div class="mb-4 footer-logo-wrap">
+          <a href="#" class="footer-logo">Coding Tool<span>.</span></a>
+        </div>
+        <p>Desarrollamos páginas web y sistemas personalizados que se adaptan a las necesidades de tu negocio.</p>
+        <ul class="list-unstyled custom-social">
+          <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+          <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+          <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+          <li><a href="#"><span class="fa fa-linkedin-in"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const products = [
+  { id: 1, name: 'Carrito de compras', image:'https://source.unsplash.com/300x200/?shopping,cart', price:1000 },
+  { id: 2, name: 'Búsqueda avanzada', image:'https://source.unsplash.com/300x200/?search,engine', price:800 },
+  { id: 3, name: 'Filtros por categorías', image:'https://source.unsplash.com/300x200/?filter,options', price:700 },
+  { id: 4, name: 'Opciones de pago', image:'https://source.unsplash.com/300x200/?payment,online', price:1200 },
+  { id: 5, name: 'Registro de usuarios', image:'https://source.unsplash.com/300x200/?register,user', price:900 },
+  { id: 6, name: 'Iniciar sesión', image:'https://source.unsplash.com/300x200/?login,form', price:900 },
+  { id: 7, name: 'Panel de administración', image:'https://source.unsplash.com/300x200/?admin,dashboard', price:1500 },
+  { id: 8, name: 'Valoraciones y comentarios', image:'https://source.unsplash.com/300x200/?reviews,feedback', price:600 },
+  { id: 9, name: 'Wishlist', image:'https://source.unsplash.com/300x200/?wishlist,shopping', price:500 },
+  { id: 10, name: 'Carrito persistente', image:'https://source.unsplash.com/300x200/?shopping-cart,save', price:1100 },
+  { id: 11, name: 'Notificaciones', image:'https://source.unsplash.com/300x200/?notifications,alerts', price:400 },
+  { id: 12, name: 'Sistema de cupones', image:'https://source.unsplash.com/300x200/?coupon,discount', price:700 },
+  { id: 13, name: 'Integración con redes sociales', image:'https://source.unsplash.com/300x200/?social,media', price:800 },
+  { id: 14, name: 'Descargas digitales', image:'https://source.unsplash.com/300x200/?download,digital', price:1000 },
+  { id: 15, name: 'Blog interno', image:'https://source.unsplash.com/300x200/?blog,writing', price:600 },
+  { id: 16, name: 'Chat en vivo', image:'https://source.unsplash.com/300x200/?live,chat', price:900 },
+  { id: 17, name: 'FAQ', image:'https://source.unsplash.com/300x200/?faq,help', price:400 },
+  { id: 18, name: 'Soporte vía email', image:'https://source.unsplash.com/300x200/?email,support', price:500 },
+  { id: 19, name: 'Newsletter', image:'https://source.unsplash.com/300x200/?newsletter,mail', price:500 },
+  { id: 20, name: 'Seguridad SSL', image:'https://source.unsplash.com/300x200/?security,ssl', price:1200 },
+  { id: 21, name: 'Análisis de tráfico', image:'https://source.unsplash.com/300x200/?analytics,traffic', price:1000 },
+  { id: 22, name: 'Optimización SEO', image:'https://source.unsplash.com/300x200/?seo,optimization', price:800 },
+  { id: 23, name: 'Reseñas de productos', image:'https://source.unsplash.com/300x200/?product,reviews', price:600 },
+  { id: 24, name: 'Sistema de puntos', image:'https://source.unsplash.com/300x200/?points,system', price:700 },
+  { id: 25, name: 'Carrito multiusuario', image:'https://source.unsplash.com/300x200/?multiuser,cart', price:1200 },
+  { id: 26, name: 'Pagos recurrentes', image:'https://source.unsplash.com/300x200/?subscription,payment', price:1500 },
+  { id: 27, name: 'Chatbot inteligente', image:'https://source.unsplash.com/300x200/?chatbot,ai', price:1000 },
+  { id: 28, name: 'Múltiples idiomas', image:'https://source.unsplash.com/300x200/?languages,translate', price:900 },
+  { id: 29, name: 'Actualizaciones automáticas', image:'https://source.unsplash.com/300x200/?update,software', price:1100 },
+  { id: 30, name: 'Backup en la nube', image:'https://source.unsplash.com/300x200/?cloud,backup', price:1300 },
+  { id: 31, name: 'Integración con Google Maps', image:'https://source.unsplash.com/300x200/?google-maps', price:800 },
+  { id: 32, name: 'Notificaciones push', image:'https://source.unsplash.com/300x200/?push,notification', price:600 },
+];
+function updateCartCount() {
+  const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const badge = document.getElementById("cart-count-badge");
+  badge.textContent = totalItems;
+  badge.style.display = totalItems > 0 ? "inline-block" : "none";
+}
+
+function renderProducts() {
+  const productList = document.getElementById("product-list");
+  productList.innerHTML = "";
+  products.forEach(p => {
+    const div = document.createElement("div");
+    div.className = "col-md-3";
+    div.innerHTML = `
+      <div class="product-card text-center">
+        <img src="${p.image}" alt="${p.name}">
+        <h5>${p.name}</h5>
+        <p>$${p.price.toLocaleString("es-MX")}</p>
+        <input type="number" min="1" value="1" class="quantity-input" data-id="${p.id}">
+        <button class="btn-add btn" data-id="${p.id}">Agregar al carrito</button>
+      </div>
+    `;
+    productList.appendChild(div);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+  updateCartCount();
+
+  document.getElementById("product-list").addEventListener("click", (e) => {
+    if(e.target.classList.contains("btn-add")){
+      const id = Number(e.target.dataset.id);
+      const qtyInput = document.querySelector(`.quantity-input[data-id='${id}']`);
+      const quantity = Number(qtyInput.value);
+      let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+      const product = products.find(p => p.id === id);
+      const existing = cart.find(p => p.id === id);
+      if(existing){ existing.quantity += quantity; }
+      else{ cart.push({...product, quantity}); }
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      alert(`${product.name} agregado al carrito`);
+    }
+  });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
