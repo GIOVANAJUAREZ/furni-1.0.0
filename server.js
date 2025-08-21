@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const db = require("./DB/config.js");
+const auth = require("./routes/auth.js");
 const cors = require("cors");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -49,10 +50,16 @@ class Server {
         this.app.get("/checkout", (req, res) => {
             res.sendFile(path.join(__dirname, "views", "checkout.html"));
         });
-        this.app.use((req, res) => {
+        this.app.get("/client", (req, res) => {
+            res.sendFile(path.join(__dirname, "views", "login-register.html"));
+        });
+       /* this.app.use((req, res) => {
              res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
-        });     
+        });     */
 
+        //login
+        this.app.use("/auth", auth);
+         
         // Obtener carrito
         this.app.get("/api/carrito", (req, res) => {
             db.query("SELECT * FROM carrito", (err, results) => {

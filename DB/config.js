@@ -1,4 +1,4 @@
-const mysql = require("mysql2");
+const mysql = require("mysql2/promise");
 const dotenv = require("dotenv");
 require("dotenv").config();
 
@@ -16,7 +16,7 @@ const pool = mysql.createPool({
 // Verificar la conexión
 pool.getConnection((err, connection) => {
   if (err) {
-    console.error('Error connecting to the database:', err.stack);
+    console.error('Error connecting to the database: ', err.stack);
     process.exit(1);
   }
   console.log('Connected to the database as id ' + connection.threadId);

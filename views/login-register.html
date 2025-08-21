@@ -74,8 +74,9 @@ button.show-panel{background:#fff;color:#512da8;border:1px solid #512da8;border-
         </div>
     </div>
 </div>
-
+<script src="../js/config.js"></script>
 <script>
+const API = window.ENV.API_HOST;
 const container = document.getElementById('container');
 const registerBtn = document.getElementById('register');
 const loginBtn = document.getElementById('login');
@@ -98,14 +99,14 @@ async function postJSON(url, data){
         return {status:"error", error:"No se pudo conectar con el servidor"};
     }
 }
-
 // Registro
 document.getElementById("registerForm").addEventListener("submit", async e=>{
     e.preventDefault();
     const name = document.getElementById("regName").value;
     const email = document.getElementById("regEmail").value;
     const password = document.getElementById("regPassword").value;
-    const data = await postJSON("http://localhost/furni-1.0.0/views/register.php",{name,email,password});
+
+    const data = await postJSON(`/auth/register`, {name, email, password});
     alert(data.message || data.error);
     if(data.status==="success") container.classList.remove("active");
 });
@@ -115,16 +116,16 @@ document.getElementById("loginForm").addEventListener("submit", async e=>{
     e.preventDefault();
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
-    const data = await postJSON("http://localhost/furni-1.0.0/views/login.php",{email,password});
+
+    const data = await postJSON(`/auth/login`, {email, password});
     if(data.status==="success"){
         alert("Bienvenido "+data.user.name);
-        localStorage.setItem("user",JSON.stringify(data.user));
-        // Redirigir a index.html
-        window.location.href = "index.html";
-    } else alert(data.error);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        window.location = "/"; // redirige al index.html
+    } else {
+        alert(data.error);
+    }
 });
-
 </script>
-
 </body>
 </html>
