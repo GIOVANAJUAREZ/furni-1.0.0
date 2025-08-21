@@ -77,7 +77,7 @@
     aria-label="Coding Tool navigation bar"
   >
     <div class="container">
-      <a class="navbar-brand" href="index.html"
+      <a class="navbar-brand" href="/"
         >Coding Tool<span>.</span></a
       >
 
@@ -96,19 +96,19 @@
       <div class="collapse navbar-collapse" id="navbarsFurni">
         <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="/">Inicio</a>
           </li>
-          <li><a class="nav-link" href="shop.html">Funcionalidades</a></li>
-          <li><a class="nav-link" href="about.html">¿Quiénes somos?</a></li>
-          <li><a class="nav-link" href="services.html">Soluciones</a></li>
-          <li><a class="nav-link" href="blog.html">Casos de éxito</a></li>
-          <li><a class="nav-link" href="contact.html">Contáctanos</a></li>
+          <li><a class="nav-link" href="/shop">Funcionalidades</a></li>
+          <li><a class="nav-link" href="/about">¿Quiénes somos?</a></li>
+          <li><a class="nav-link" href="/services">Soluciones</a></li>
+          <li><a class="nav-link" href="/blog">Casos de éxito</a></li>
+          <li><a class="nav-link" href="/contact">Contáctanos</a></li>
         </ul>
 
         <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
           <li><a class="nav-link" href="#"><img src="images/user.svg" alt="Usuario" /></a></li>
           <li>
-            <a class="nav-link" href="cart.html" style="position: relative;">
+            <a class="nav-link" href="/cart" style="position: relative;">
               <img src="images/cart.svg" alt="Cotizador" />
               <!-- Aquí aparecerá el badge contador -->
             </a>
@@ -161,7 +161,7 @@
             Selecciona las funcionalidades que necesitas: nosotros desarrollamos tu página web,
             aplicación o sistema personalizado según tus requerimientos.
           </p>
-          <p><a href="shop.html" class="btn">Descubre cómo</a></p>
+          <p><a href="/shop" class="btn">Descubre cómo</a></p>
         </div>
         <!-- End Column 1 -->
 
@@ -363,7 +363,7 @@
       const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
       const cartLink = document.querySelector(
-        'a[href="cart.html"] img[alt="Cotizador"]'
+        'a[href="/cart"] img[alt="Cotizador"]'
       );
       if (!cartLink) return;
 

@@ -136,23 +136,23 @@
   <!-- Navbar -->
   <nav class="custom-navbar navbar navbar-expand-md navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Coding Tool<span>.</span></a>
+      <a class="navbar-brand" href="/">Coding Tool<span>.</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarsFurni">
         <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item active"><a class="nav-link" href="shop.html">Funcionalidades</a></li>
-          <li><a class="nav-link" href="about.html">¿Quiénes somos?</a></li>
-          <li><a class="nav-link" href="services.html">Soluciones</a></li>
-          <li><a class="nav-link" href="blog.html">Casos de éxito</a></li>
-          <li><a class="nav-link" href="contact.html">Contáctanos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+          <li class="nav-item active"><a class="nav-link" href="/shop">Funcionalidades</a></li>
+          <li><a class="nav-link" href="/about">¿Quiénes somos?</a></li>
+          <li><a class="nav-link" href="/services">Soluciones</a></li>
+          <li><a class="nav-link" href="/blog">Casos de éxito</a></li>
+          <li><a class="nav-link" href="/contact">Contáctanos</a></li>
         </ul>
         <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
           <li><a class="nav-link" href="#"><img src="images/user.svg" alt="Usuario" /></a></li>
           <li>
-            <a class="nav-link" href="cart.html" style="position: relative;">
+            <a class="nav-link" href="/cart" style="position: relative;">
               <img src="images/cart.svg" alt="Cotizador" />
               <span id="cart-count-badge" style="position:absolute;top:-5px;right:-5px;background:red;color:white;border-radius:50%;padding:2px 6px;font-size:12px;"></span>
             </a>
@@ -186,7 +186,7 @@
         </tfoot>
       </table>
     </div>
-    <a href="shop.html" class="btn btn-secondary mt-3">Seguir comprando</a>
+    <a href="/shop" class="btn btn-secondary mt-3">Seguir comprando</a>
    <button id="checkout-btn" class="btn btn-primary mt-3">Proceder al pago</button>
 
   </section>
@@ -401,7 +401,7 @@
   sessionStorage.setItem("checkoutCart", JSON.stringify(cart));
 
   // Redirigir a la página de pago
-  window.location.href = "checkout.html"; // aquí pones tu página de pago
+  window.location.href = "/checkout"; // aquí pones tu página de pago
 });
 
   </script>
