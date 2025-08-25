@@ -53,6 +53,9 @@ class Server {
         this.app.get("/client", (req, res) => {
             res.sendFile(path.join(__dirname, "views", "login-register.html"));
         });
+        this.app.get("/preview", (req, res) => {
+            res.sendFile(path.join(__dirname, "views", "preview.html"));
+        });
        /* this.app.use((req, res) => {
              res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
         });     */

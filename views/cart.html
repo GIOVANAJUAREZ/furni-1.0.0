@@ -191,6 +191,112 @@
 
   </section>
 
+
+  <!-- Sección de vista previa -->
+<section class="preview-builder py-5 bg-light">
+  <div class="container">
+    <h3 class="mb-4 text-center">Vista Previa</h3>
+  
+    <!-- Botones para añadir funcionalidades -->
+    <div class="text-center mb-4">
+      <button class="btn btn-primary m-2" onclick="addFeature('Chat')">➕ Chat</button>
+      <button class="btn btn-success m-2" onclick="addFeature('Carrito')">➕ Carrito</button>
+      <button class="btn btn-info m-2" onclick="addFeature('Usuarios')">➕ Usuarios</button>
+    </div>
+
+    <!-- Ventana de navegador -->
+    <div class="browser-window border rounded shadow bg-white mx-auto" style="max-width:600px;">
+      <!-- Barra superior -->
+      <div class="browser-header d-flex align-items-center p-2 border-bottom" style="background:#f1f1f1;">
+        <div class="circles d-flex gap-2 me-3">
+          <span class="circle red"></span>
+          <span class="circle yellow"></span>
+          <span class="circle green"></span>
+        </div>
+        <div class="address-bar flex-grow-1 px-2 py-1 bg-white border rounded small">
+          www.tusitioweb.com
+        </div>
+      </div>
+      <!-- Contenido dinámico -->
+      <div id="browser-content" class="p-3" style="min-height:200px;">
+        <p class="text-muted">Aquí se irán agregando las funcionalidades que elijas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Circulitos estilo Mac */
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.circle.red { background: #ff5f56; }
+.circle.yellow { background: #ffbd2e; }
+.circle.green { background: #27c93f; }
+
+/* Caja de cada módulo */
+.module-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+.module-box h5 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #3b5d50;
+}
+</style>
+
+<script>
+function addFeature(type) {
+  const content = document.getElementById("browser-content");
+
+  // Evitar que se duplique
+  if (document.getElementById("module-" + type)) return;
+
+  let module = document.createElement("div");
+  module.classList.add("module-box");
+  module.id = "module-" + type; // identificador único
+
+  if (type === "Chat") {
+    module.innerHTML = `
+      <h5>💬 Chat en vivo</h5>
+      <div style="border:1px solid #ccc; border-radius:6px; height:100px; overflow:auto; padding:6px; text-align:left;">
+        <p><strong>Soporte:</strong> ¡Hola! ¿Cómo puedo ayudarte?</p>
+      </div>
+      <input type="text" class="form-control form-control-sm mt-2" placeholder="Escribe un mensaje...">
+    `;
+  } else if (type === "Carrito") {
+    module.innerHTML = `
+      <h5>🛒 Carrito de compras</h5>
+      <ul class="list-group list-group-sm">
+        <li class="list-group-item">Producto A - $150</li>
+        <li class="list-group-item">Producto B - $200</li>
+      </ul>
+      <button class="btn btn-sm btn-success mt-2">Finalizar Compra</button>
+    `;
+  } else if (type === "Usuarios") {
+    module.innerHTML = `
+      <h5>👤 Lista de usuarios</h5>
+      <table class="table table-bordered table-sm">
+        <thead><tr><th>ID</th><th>Nombre</th><th>Email</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Jonathan</td><td>jonathan@mail.com</td></tr>
+          <tr><td>2</td><td>Ana</td><td>ana@mail.com</td></tr>
+        </tbody>
+      </table>
+    `;
+  }
+
+  content.appendChild(module);
+}
+</script>
+<br><br>
 <!-- Start Footer Section -->
 <footer class="footer-section">
 	<div class="container relative">
