@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+  <meta name="description" content="Gracias por su compra. Descarga y pasos de instalación." />
+  <meta name="keywords" content="bootstrap, bootstrap4, download, thanks" />
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Coding Tool - Descarga</title>
+
+  <style>
+    /* Opcional: algunos retoques para esta vista específica */
+    .hero {
+      background: #222 url('images/hero_1.jpg') center/cover no-repeat;
+      padding: 6rem 0 4rem;
+      color: #fff;
+    }
+    .status-badge { font-size: .95rem; }
+    .steps-list li { margin-bottom: .5rem; }
+    .code-box { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#0f172a; color:#e2e8f0; border-radius:.5rem; padding:1rem; }
+    .muted { opacity:.8; }
+  </style>
+</head>
+
+<body>
+
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Coding Tool<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsFurni">
+      <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li><a class="nav-link" href="/shop">Funcionalidades</a></li>
+        <li><a class="nav-link" href="/about">¿Quiénes somos?</a></li>
+        <li><a class="nav-link" href="/services">Soluciones</a></li>
+        <li><a class="nav-link" href="/blog">Casos de éxito</a></li>
+        <li><a class="nav-link" href="/contact">Contáctanos</a></li>
+      </ul>
+      <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+        <li><a class="nav-link" href="/client"><img src="images/user.svg" alt="Usuario"></a></li>
+        <li><a class="nav-link" href="cart.html"><img src="images/cart.svg" alt="Cotizador"></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Header/Navigation -->
+
+<!-- Hero Section -->
+<div class="hero">
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-lg-7">
+        <div class="intro-excerpt">
+          <h1 class="mb-3"><i class="fa-solid fa-circle-check me-2 text-success"></i>¡Gracias por tu compra!</h1>
+          <p class="lead mb-0">Tu pago se ha confirmado y tu archivo está listo para descargar.</p>
+        </div>
+      </div>
+      <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+        <span class="badge bg-success status-badge"><i class="fa-solid fa-receipt me-1"></i> Pedido confirmado</span>
+        <span class="badge bg-info ms-2 status-badge"><i class="fa-solid fa-download me-1"></i> Listo para descarga</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="untree_co-section">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Col izquierda: Pasos y descarga -->
+      <div class="col-md-7">
+        <div class="p-3 p-lg-4 border bg-white rounded-3 shadow-sm">
+          <h2 class="h4 text-black mb-3">Descarga e instalación</h2>
+          <ol class="steps-list">
+            <li>Haz clic en <strong>Descargar archivo</strong> para obtener el paquete (.zip).</li>
+            <li>Descomprime el archivo en una carpeta de tu preferencia.</li>
+            <li>Abre el proyecto:
+              <ul>
+                <li>HTML estático: abre <code>index.html</code> en tu navegador.</li>
+                <li>Proyecto Node: ejecuta estos comandos:</li>
+              </ul>
+            </li>
+          </ol>
+          <div class="code-box mb-3">
+<pre class="m-0"><code># En la carpeta del proyecto
+npm install
+npm run dev  # o npm start, según el proyecto</code></pre>
+          </div>
+          <p class="mb-3">¿Problemas con la descarga? Usa el botón de respaldo para generar un archivo de ejemplo local.</p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a id="downloadMain" class="btn btn-black btn-lg px-4" href="#" download>
+              <i class="fa-solid fa-download me-2"></i>Descargar archivo
+            </a>
+            <button id="downloadFallback" class="btn btn-outline-dark btn-lg px-4" type="button">
+              <i class="fa-solid fa-file-arrow-down me-2"></i>Descarga de respaldo
+            </button>
+            <button id="printReceipt" class="btn btn-outline-secondary btn-lg px-4" type="button">
+              <i class="fa-solid fa-print me-2"></i>Imprimir recibo
+            </button>
+          </div>
+
+          <div class="alert alert-light border mt-3 mb-0">
+            <div class="d-flex align-items-center"><i class="fa-solid fa-key me-2"></i>
+              <div>
+                <small class="d-block">Licencia/clave:</small>
+                <strong id="licenseKey">••••-••••-••••-••••</strong>
+                <button id="copyKey" class="btn btn-sm btn-outline-primary ms-2">Copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col derecha: Resumen del pedido -->
+      <div class="col-md-5">
+        <div class="p-3 p-lg-4 border bg-white rounded-3 shadow-sm">
+          <h2 class="h4 text-black mb-3">Resumen del pedido</h2>
+          <div class="mb-2 small muted">No. de pedido: <span id="orderId">—</span></div>
+          <div class="table-responsive">
+            <table class="table site-block-order-table mb-3">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th class="text-end">Total</th>
+                </tr>
+              </thead>
+              <tbody id="orderTableBody">
+                <!-- JS render -->
+              </tbody>
+            </table>
+          </div>
+          <div class="d-grid gap-2">
+            <a id="resendEmail" class="btn btn-outline-info" href="#">
+              <i class="fa-solid fa-envelope me-2"></i>Reenviar correo de descarga
+            </a>
+            <a class="btn btn-outline-secondary" href="/contact">
+              <i class="fa-solid fa-headset me-2"></i>Soporte
+            </a>
+          </div>
+          <hr>
+          <p class="small text-muted mb-0">Si ya cerraste esta página, podrás descargar desde el correo de confirmación o tu panel de cliente.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-section">
+  <div class="container relative">
+    <div class="row g-5 mb-5">
+      <div class="col-lg-4">
+        <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Coding Tool<span>.</span></a></div>
+        <p class="mb-4">Desarrollamos páginas web y aplicaciones totalmente personalizadas, basadas en las funcionalidades que tú eliges.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/tiny-slider.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+// ===== Utilidades =====
+function money(n){ return new Intl.NumberFormat('es-MX', {style:'currency', currency:'MXN'}).format(n); }
+function getParam(name){ return new URLSearchParams(location.search).get(name); }
+
+// ===== Elementos =====
+const orderTableBody = document.getElementById('orderTableBody');
+const orderIdEl = document.getElementById('orderId');
+const licenseKeyEl = document.getElementById('licenseKey');
+const copyKeyBtn = document.getElementById('copyKey');
+const downloadBtn = document.getElementById('downloadMain');
+const fallbackBtn = document.getElementById('downloadFallback');
+const printBtn = document.getElementById('printReceipt');
+const resendEmailBtn = document.getElementById('resendEmail');
+
+// ===== Datos simulados / recuperados =====
+// Intenta cargar carrito desde sessionStorage (p.ej., guardado en el checkout), si no, usa ejemplo.
+let cart = [];
+try {
+  cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+} catch(e){ cart = []; }
+if(!Array.isArray(cart) || cart.length === 0){
+  cart = [
+    { name: 'Paquete Código – Starter', qty: 1, price: 250 },
+    { name: 'Soporte premium (1 mes)', qty: 1, price: 100 }
+  ];
+}
+let discount = Number(sessionStorage.getItem('discount') || 0);
+
+// Orden/cliente desde query params opcionales
+const orderId = getParam('order') || 'CT-' + (Math.random().toString(36).slice(2,8).toUpperCase());
+const email = getParam('email') || '';
+orderIdEl.textContent = orderId;
+
+// ===== Render del resumen =====
+function renderSummary(){
+  orderTableBody.innerHTML = '';
+  let subtotal = 0;
+  cart.forEach(item=>{
+    const totalItem = item.price * item.qty;
+    subtotal += totalItem;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${item.name} <strong class="mx-1">×</strong> ${item.qty}</td><td class="text-end">${money(totalItem)}</td>`;
+    orderTableBody.appendChild(tr);
+  });
+  const trSubtotal = document.createElement('tr');
+  trSubtotal.innerHTML = `<td><strong>Subtotal</strong></td><td class="text-end">${money(subtotal)}</td>`;
+  orderTableBody.appendChild(trSubtotal);
+
+  if(discount > 0){
+    const trDiscount = document.createElement('tr');
+    trDiscount.innerHTML = `<td class="text-success">Descuento</td><td class="text-end text-success">−${money(discount)}</td>`;
+    orderTableBody.appendChild(trDiscount);
+  }
+
+  const total = subtotal - discount;
+  const trTotal = document.createElement('tr');
+  trTotal.innerHTML = `<td class="text-black"><strong>Total</strong></td><td class="text-end text-black"><strong>${money(total)}</strong></td>`;
+  orderTableBody.appendChild(trTotal);
+}
+renderSummary();
+
+// ===== Clave de licencia (simulada) =====
+function generateLicense(order){
+  const base = btoa(order + Date.now()).replace(/\W/g,'').slice(0,16).toUpperCase();
+  return base.match(/.{1,4}/g).join('-');
+}
+const license = generateLicense(orderId);
+licenseKeyEl.textContent = license;
+copyKeyBtn.addEventListener('click', async ()=>{
+  try { await navigator.clipboard.writeText(license); copyKeyBtn.textContent = '¡Copiado!'; setTimeout(()=> copyKeyBtn.textContent='Copiar', 1500); }
+  catch(e){ alert('No se pudo copiar.'); }
+});
+
+// ===== Descarga principal =====
+// Cambia esta ruta al archivo real que subas a tu hosting
+const DOWNLOAD_URL = 'downloads/coding-tool.zip';
+
+async function checkFileExists(url){
+  try {
+    const res = await fetch(url, { method: 'HEAD' });
+    return res.ok;
+  } catch(e){ return false; }
+}
+
+(async ()=>{
+  const exists = await checkFileExists(DOWNLOAD_URL);
+  if(exists){
+    downloadBtn.href = DOWNLOAD_URL;
+    downloadBtn.setAttribute('download', 'coding-tool.zip');
+  } else {
+    downloadBtn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert('El archivo de descarga principal aún no está disponible (downloads/coding-tool.zip). Usa el botón de respaldo o sube tu archivo y actualiza la ruta.');
+    });
+  }
+})();
+
+// ===== Descarga de respaldo (genera un .txt local con instrucciones) =====
+fallbackBtn.addEventListener('click', ()=>{
+  const content = `Gracias por tu compra (Pedido ${orderId}).\n\nClave: ${license}\n\nPasos rápidos:\n1) Descarga el paquete real cuando esté disponible en: ${location.origin}/downloads/coding-tool.zip\n2) Descomprime y abre index.html o ejecuta npm install && npm run dev si es proyecto Node.\n3) Soporte: ${location.origin}/contact`;
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `Instrucciones_${orderId}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  URL.revokeObjectURL(a.href);
+  a.remove();
+});
+
+// ===== Imprimir recibo =====
+printBtn.addEventListener('click', ()=>{ window.print(); });
+
+// ===== Reenviar correo (simulado con mailto) =====
+resendEmailBtn.addEventListener('click', (e)=>{
+  if(!email){
+    e.preventDefault();
+    const to = prompt('Ingresa tu correo para reenviar el enlace de descarga:');
+    if(!to) return;
+    const subject = encodeURIComponent(`Enlace de descarga – Pedido ${orderId}`);
+    const body = encodeURIComponent(`Gracias por tu compra.\n\nDescarga: ${location.origin}/${DOWNLOAD_URL}\nPedido: ${orderId}\nClave: ${license}`);
+    location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  } else {
+    resendEmailBtn.href = `mailto:${email}?subject=${encodeURIComponent('Enlace de descarga – Pedido '+orderId)}&body=${encodeURIComponent('Gracias por tu compra.\\n\\nDescarga: '+location.origin+'/'+DOWNLOAD_URL+'\\nPedido: '+orderId+'\\nClave: '+license)}`;
+  }
+});
+</script>
+
+</body>
+</html>

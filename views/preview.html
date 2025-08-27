@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vista previa miniatura</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    /* Panel de opciones */
+    .options {
+      width: 220px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .options h3 {
+      margin-top: 0;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Contenedor miniatura de la página */
+    .preview-container {
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      width: 360px;   /* tamaño miniatura */
+      height: 500px;  /* tamaño miniatura */
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Simular barra superior de navegador */
+    .preview-header {
+      background: #eee;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 14px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Área que simula la web */
+    .preview {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 35px);
+      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+    }
+
+    /* Widgets */
+    .widget {
+      position: absolute;
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: popIn 0.4s ease;
+    }
+
+    .chat {
+      bottom: 15px;
+      right: 15px;
+    }
+
+    .cart {
+      top: 15px;
+      right: 15px;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="options">
+    <h3>Opciones</h3>
+    <label><input type="checkbox" id="chatToggle"> Chat</label>
+    <label><input type="checkbox" id="cartToggle"> Carrito</label>
+  </div>
+
+  <!-- Miniatura de página -->
+  <div class="preview-container">
+    <div class="preview-header">🌐 Mi sitio web</div>
+    <div class="preview" id="preview">
+      <!-- Aquí aparecen los widgets -->
+    </div>
+  </div>
+
+  <script>
+    const preview = document.getElementById("preview");
+    const chatToggle = document.getElementById("chatToggle");
+    const cartToggle = document.getElementById("cartToggle");
+
+    chatToggle.addEventListener("change", () => {
+      if(chatToggle.checked){
+        const chat = document.createElement("div");
+        chat.className = "widget chat";
+        chat.id = "chatWidget";
+        chat.innerHTML = '<i class="fa-solid fa-comments"></i>';
+        preview.appendChild(chat);
+      } else {
+        document.getElementById("chatWidget")?.remove();
+      }
+    });
+
+    cartToggle.addEventListener("change", () => {
+      if(cartToggle.checked){
+        const cart = document.createElement("div");
+        cart.className = "widget cart";
+        cart.id = "cartWidget";
+        cart.innerHTML = '<i class="fa-solid fa-cart-shopping"></i>';
+        preview.appendChild(cart);
+      } else {
+        document.getElementById("cartWidget")?.remove();
+      }
+    });
+  </script>
+
+</body>
+</html>
